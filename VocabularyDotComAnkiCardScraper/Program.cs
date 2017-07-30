@@ -25,7 +25,6 @@ namespace VocabularyDotComAnkiCardScraper
 
         private static async Task<IEnumerable<(string word, string definition)>> GetWords(string url)
         {
-            await Task.CompletedTask;
             var config = Configuration.Default.WithDefaultLoader();
             var document = await BrowsingContext.New(config).OpenAsync(url);
             var wordListElement = document.GetElementById("wordlist");
